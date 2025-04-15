@@ -1,29 +1,17 @@
 public class Main {
     public static void main(String[] args) {
-//        RectangleArea rectangle = new RectangleArea();
+        Animal[] animal = new Animal[5];
 
-//        Car myCar = new Car("Model S", "Tesla", 2023, 79999.99, "Red", 10);
-//
-//        System.out.println(myCar);
-//        myCar.sell(2);
-//
-//        System.out.println("\nAfter selling:");
-//        System.out.println("Model: " + myCar.getModel());
-//        System.out.println("Brand: " + myCar.getBrand());
-//        System.out.println("Year: " + myCar.getYear());
-//        System.out.println("Price: $" + myCar.getPrice());
-//        System.out.println("Color: " + myCar.getColor());
-//        System.out.println("Quantity: " + myCar.getQuantity());
-//
-//        myCar.setYear(2020);
-//        myCar.setPrice(75999.99);
-//        myCar.setColor("Blue");
-//        myCar.delivery(5);
-//
-//        // Display updated car details using toString()
-//        System.out.println("\nAfter modifications:");
-//        System.out.println(myCar);
+        animal[0] = new mammal("Little Brown", 2, 3, "Bat");
+        animal[1] = new mammal.dog("Rex", 5, 25, "German Shepherd");
+        animal[2] = new bird("Tweety", 1, 1, "Yellow");
+        animal[3] = new bird.pigeon("Messenger", 3, 2, "Rock Dove");
+        animal[4] = new fish.blowfish("Puffy", 2, 1, 50);
 
-
+        for (Animal a : animal) {
+            a.getVoice();
+            a.eat();
+            System.out.println();
+        }
     }
 }
