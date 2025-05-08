@@ -1,9 +1,11 @@
-import java.util.Scanner;
+package animals;
+
 import lombok.Getter;
 import lombok.Setter;
 
+@Setter
+@Getter
 public class bird extends Animal {
-    @Getter @Setter
     String featherColor;
 
     public bird() {
@@ -26,8 +28,9 @@ public class bird extends Animal {
         System.out.println("bird voice");
     }
 
-    public static class pigeon extends bird {
-        @Getter @Setter
+    @Setter
+    @Getter
+    public static class pigeon extends bird implements AnimalBehavior {
         String species;
 
         public pigeon() {
@@ -42,12 +45,22 @@ public class bird extends Animal {
 
         @Override
         public void eat() {
-            System.out.println("Pigeon eat");
+            System.out.println("Pigeon food");
         }
 
         @Override
         public void getVoice() {
             System.out.println("Pigeon voice: " + species);
+        }
+
+        @Override
+        public void sleep() {
+            System.out.println("Pigeon " + getName() + " is sleeping");
+        }
+
+        @Override
+        public void move() {
+            System.out.println("Pigeon " + getName() + " flies");
         }
     }
 }

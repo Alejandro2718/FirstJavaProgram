@@ -1,8 +1,11 @@
+package animals;
+
 import lombok.Getter;
 import lombok.Setter;
 
+@Setter
+@Getter
 public class mammal extends Animal {
-    @Getter @Setter
     String order;
 
     public mammal() {
@@ -25,8 +28,9 @@ public class mammal extends Animal {
         System.out.println("mammal voice");
     }
 
-    public static class dog extends mammal {
-        @Getter @Setter
+    @Setter
+    @Getter
+    public static class dog extends mammal implements AnimalBehavior {
         String breed;
 
         public dog() {
@@ -47,6 +51,16 @@ public class mammal extends Animal {
         @Override
         public void getVoice() {
             System.out.println("dog voice");
+        }
+
+        @Override
+        public void sleep() {
+            System.out.println("Dog " + getName() + " is sleeping");
+        }
+
+        @Override
+        public void move() {
+            System.out.println("Dog " + getName() + " runs");
         }
     }
 }

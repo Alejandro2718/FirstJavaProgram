@@ -1,13 +1,14 @@
+package animals;
+
 import lombok.Getter;
 import lombok.Setter;
 
-public abstract class Animal {
-    @Getter @Setter
-    protected String name;
-    @Getter @Setter
-    protected int age;
-    @Getter @Setter
-    protected int weight;
+@Setter
+@Getter
+public abstract class Animal implements AnimalMove, AnimalName {
+    public String name;
+    public int age;
+    public int weight;
 
     public Animal() {
         this.name = "Unknown";

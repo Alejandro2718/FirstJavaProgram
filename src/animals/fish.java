@@ -1,8 +1,11 @@
+package animals;
+
 import lombok.Getter;
 import lombok.Setter;
 
+@Setter
+@Getter
 public class fish extends Animal {
-    @Getter @Setter
     String waterType;
 
     public fish() {
@@ -25,8 +28,9 @@ public class fish extends Animal {
         System.out.println("fish voice");
     }
 
-    public static class blowfish extends fish {
-        @Getter @Setter
+    @Setter
+    @Getter
+    public static class blowfish extends fish implements AnimalBehavior {
         int spineCount;
 
         public blowfish() {
@@ -47,6 +51,16 @@ public class fish extends Animal {
         @Override
         public void getVoice() {
             System.out.println("blowfish voice");
+        }
+
+        @Override
+        public void sleep() {
+            System.out.println("Blowfish " + getName() + " is sleeping");
+        }
+
+        @Override
+        public void move() {
+            System.out.println("Blowfish " + getName() + " swims");
         }
     }
 }
